@@ -1,1 +1,41 @@
-<p>login works!</p>
+<div class="background"></div>
+
+
+<div id="toolbar">
+    <mat-toolbar class="toolbar" color="black">
+        <span class="identity">
+            <span class="titleLogo"></span>
+            <span class="title">Meal Planner</span>
+        </span>
+
+        <span class="example-spacer"></span>
+        <span class="links">
+
+            <mat-button-toggle-group class="buttonlink" name="legacy" aria-label="Font Style">
+                <mat-button-toggle value="My Account" onclick="location.href=''">My Account
+                </mat-button-toggle>
+                <mat-button-toggle value="My Plan" onclick="location.href=''">My Plan
+                </mat-button-toggle>
+                <mat-button-toggle value="Recipes" onclick="location.href=''">Recipes
+                </mat-button-toggle>
+
+            </mat-button-toggle-group>
+        </span>
+
+    </mat-toolbar>
+</div>
+
+<div class="pageContents">
+    <div class="login">
+        <form action="/action_page.php">
+            <p>Login</p>
+            <label for="uname">Username:</label>
+            <input type="text" id="uname" name="uname" value="Anon"><br>
+            <label for="pword">Password:</label>
+            <input type="text" id="pword" name="pword" value="1234321"><br><br>
+            <input type="submit" value="Login">
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+
+</div>

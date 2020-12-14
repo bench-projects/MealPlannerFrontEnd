@@ -6,11 +6,11 @@ import {MyplanComponent} from '../myplan/myplan.component';
 
 const routes = [
   {
-    path: '',
+    path: 'a',
     component: AllRecipesComponent
   },
   {
-    path: 'login',
+    path: '',
     component: LoginComponent
   },
   {

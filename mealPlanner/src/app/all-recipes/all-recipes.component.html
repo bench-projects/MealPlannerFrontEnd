@@ -1,1 +1,31 @@
-<p>all-recipes works!</p>
+<div id="toolbar">
+    <mat-toolbar class="toolbar" color="black">
+        <span class="identity">
+            <span class="titleLogo"></span>
+            <span class="title">Meal Planner</span>
+        </span>
+
+        <span class="example-spacer"></span>
+        <span class="links">
+
+            <mat-button-toggle-group class="buttonlink" name="legacy" aria-label="Font Style">
+                <mat-button-toggle value="My Account" onclick="location.href=''">My Account
+                </mat-button-toggle>
+                <mat-button-toggle value="My Plan" onclick="location.href=''">My Plan
+                </mat-button-toggle>
+                <mat-button-toggle value="Recipes" onclick="location.href=''">Recipes
+                </mat-button-toggle>
+
+            </mat-button-toggle-group>
+        </span>
+
+    </mat-toolbar>
+</div>
+<div class="pageContents">
+
+    <div class="recipe"></div>
+    <p></p>
+    <div class="recipe"></div>
+    <p></p>
+    <div class="recipe"></div>
+</div>

@@ -8,6 +8,12 @@ import { AllRecipesComponent } from './all-recipes/all-recipes.component';
 import { MyplanComponent } from './myplan/myplan.component';
 import { LoginComponent } from './login/login.component';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import {  MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +23,12 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    RoutingModule,
+    MatToolbarModule ,
+    MatBottomSheetModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
