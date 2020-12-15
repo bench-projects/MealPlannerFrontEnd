@@ -13,6 +13,11 @@ import { MatCardModule } from '@angular/material/card';
 import {  MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatExpansionModule} from '@angular/material/expansion'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatGridListModule} from '@angular/material/grid-list'
 
 @NgModule({
   declarations: [
@@ -28,7 +33,13 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatBottomSheetModule,
     MatCardModule,
     MatIconModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatExpansionModule,
+    BrowserAnimationsModule,
+    MatInputModule,FormsModule,
+    ReactiveFormsModule,
+    MatGridListModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

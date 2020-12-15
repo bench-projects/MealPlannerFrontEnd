@@ -31,39 +31,24 @@
     }
 
     .title{
-        left: 10vw;
+        
         font-size: larger;
         font-family: fantasy;
-        min-width: 20vw;
+        
     }
     .titleLogo{
         height: 6vh;
         width: 6vw;
         min-width: 5vw;
         min-height: 5vh;
-        background-color: rgba(128, 128, 128, 0);
+        background-color: rgba(128, 128, 128, 1);
         
         background-size: contain;
         background-repeat: no-repeat;
         background-position-x: center;
         background-position-y: center;
     }
-    .example-icon {
-       
-        vertical-align: text-top;
-}
-.svg-inline--fa.fa-w-16{
-color: #9147ff;
 
-}
-.svg-inline--fa.fa-w-18 {
-   
-    color: #ff0000;
-}
-.svg-inline--fa.fa-w-14 {
-    
-    color: #7289da;
-}
 
       .example-spacer {
         flex: 1 1 auto;
