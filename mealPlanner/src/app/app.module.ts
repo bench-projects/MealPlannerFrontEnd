@@ -16,9 +16,17 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatExpansionModule} from '@angular/material/expansion'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material/input'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
+
+import{MatInputModule} from '@angular/material/input'
+import{MatSelectModule} from '@angular/material/select'
+import{MatButtonModule} from '@angular/material/button'
+import{MatPaginatorModule} from '@angular/material/paginator'
+import{MatTableModule} from'@angular/material/table'
+
+import{ScrollingModule} from '@angular/cdk/scrolling'
+
 
 
 
@@ -46,6 +54,11 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatInputModule,FormsModule,
     ReactiveFormsModule,
     MatGridListModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatPaginatorModule,
+    MatTableModule,
+    ScrollingModule
     
 
   ],

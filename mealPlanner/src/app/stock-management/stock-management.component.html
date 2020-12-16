@@ -25,38 +25,91 @@
         <div id="stockpagetop">
             <div id="stockview">
                 <p>stock</p>
+
+
+
+
+                <cdk-virtual-scroll-viewport itemSize="10" class="example-viewport">
+                    <table>
+                        <tr>
+                            <th>Ingredient ID</th>
+                            <th>Ingredient name</th>
+                            <th>Ingredient quantity</th>
+                            
+                            
+                        </tr>
+                        <tr *cdkVirtualFor="let data of dummyData" class="dummydata">
+
+                            <td>??</td> 
+                            <td>{{data.name}}</td>
+                            <td>{{data.quantity}}</td>
+                        </tr>
+                    </table>
+
+                </cdk-virtual-scroll-viewport>
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
+
         </div>
         <div id="stockpagebottom">
             <div id="newingredient">
                 <p>add ingredient</p>
 
+                <form>
+                    <div class="form-group">
+                        <label for="ingredient name">Ingredient name</label>
+                        <input required minlength="3" ngModel name="ingredientName" #ingredientName="ngModel"
+                            (change)="log(ingredientName)" id="ingredientName" type="text" class="form-control">
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Ingredient name</mat-label>
-                    <input matInput>
-                </mat-form-field>
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Quantity</mat-label>
-                    <textarea matInput></textarea>
-                </mat-form-field>
+                        <label for="Ingredient Quantity">Ingredient Quantity</label>
+                        <input required min="1" ngModel name="ingredientQuantity" #ingredientQuantity="ngModel"
+                            (change)="log(ingredientQuantity)" id="ingredientQuantity" type="number"
+                            class="form-control">
+
+                        <input type="submit" value="Submit">
+                    </div>
+                    <div>
+                        <div class="alert" *ngIf="!ingredientName.valid && ingredientName.touched">
+                            <div *ngIf="ingredientName.errors.required">Must enter an ingredient name</div>
+                            <div *ngIf="ingredientName.errors.minlength">Ingredient name must be at least 3 characters
+                                long</div>
+                            <div *ngIf="ingredientQuantity.errors.required">Must enter quantity</div>
+                            <div *ngIf="ingredientQuantity.errors.min">Quantity should be 1 or more</div>
+                        </div>
+
+                    </div>
+                </form>
 
 
             </div>
             <div id="newrecipe">
                 <p>add recipe</p>
-                <mat-form-field appearance="fill">
-                    <mat-label>Ingredient name</mat-label>
-                    <input matInput>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Toppings</mat-label>
-                    <mat-select [formControl]="toppings" multiple>
-                      <mat-option *ngFor ="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                  
+                <form>
+                    <div class="form-group">
+                        <label for="Recipe name">Recipe name</label>
+                        <input id="recipeName" type="text" class="form-control">
+
+                        <label for="Ingredient List">Ingredient List</label>
+                        <input id="IngredientList" type="text" class="form-control">
+
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+
+
             </div>
         </div>
 

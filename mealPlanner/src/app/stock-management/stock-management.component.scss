@@ -1,4 +1,6 @@
-.stockpage{
+.example-viewport{
+    height: 50vh;
+    width: 100%;
     
     
 }
@@ -26,3 +28,23 @@
     width: 50%;
     
 }
+.mat-elevation-z8{
+    overflow-y:auto;
+    height: 10px;
+    background-color: aqua;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
