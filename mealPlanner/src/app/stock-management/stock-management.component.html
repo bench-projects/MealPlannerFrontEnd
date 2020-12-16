@@ -1,0 +1,66 @@
+<div>
+    <mat-toolbar class="toolbar" color="black">
+        <span class="identity"></span>
+        <span class="title">Meal Planner</span>
+
+        <span class="links">
+
+            <mat-button-toggle-group class="buttonlink" name="legacy" aria-label="Font Style">
+                <mat-button-toggle value="My Account" onclick="location.href='http://localhost:4200/'">My Account
+                </mat-button-toggle>
+                <mat-button-toggle value="My Plan" onclick="location.href='http://localhost:4200/plan'">My Plan
+                </mat-button-toggle>
+                <mat-button-toggle value="Recipes" onclick="location.href='http://localhost:4200/recipes'">Recipes
+                </mat-button-toggle>
+                <mat-button-toggle value="Stock" onclick="location.href='http://localhost:4200/stock'">Stock
+                </mat-button-toggle>
+
+            </mat-button-toggle-group>
+        </span>
+
+    </mat-toolbar>
+</div>
+<div class="pageContents">
+    <div class="stockpage">
+        <div id="stockpagetop">
+            <div id="stockview">
+                <p>stock</p>
+            </div>
+        </div>
+        <div id="stockpagebottom">
+            <div id="newingredient">
+                <p>add ingredient</p>
+
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Ingredient name</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Quantity</mat-label>
+                    <textarea matInput></textarea>
+                </mat-form-field>
+
+
+            </div>
+            <div id="newrecipe">
+                <p>add recipe</p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Ingredient name</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Toppings</mat-label>
+                    <mat-select [formControl]="toppings" multiple>
+                      <mat-option *ngFor ="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

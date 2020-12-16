@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-myplan',
@@ -11,5 +12,8 @@ export class MyplanComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  meals = new FormControl();
+
+  mealList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 
 }
