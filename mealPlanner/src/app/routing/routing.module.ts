@@ -7,15 +7,11 @@ import {StockManagementComponent} from '../stock-management/stock-management.com
 
 const routes = [
   {
-<<<<<<< Updated upstream
-    path: '',
-=======
     path: 'recipes',
->>>>>>> Stashed changes
     component: AllRecipesComponent
   },
   {
-    path: 'login',
+    path: '',
     component: LoginComponent
   },
   {

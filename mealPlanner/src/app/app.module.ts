@@ -9,8 +9,6 @@ import { MyplanComponent } from './myplan/myplan.component';
 import { LoginComponent } from './login/login.component';
 import {StockManagementComponent} from './stock-management/stock-management.component'
 
-<<<<<<< Updated upstream
-=======
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import {  MatBottomSheetModule } from '@angular/material/bottom-sheet';
@@ -27,7 +25,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
->>>>>>> Stashed changes
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,9 +35,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
   ],
   imports: [
     BrowserModule,
-<<<<<<< Updated upstream
-    RoutingModule
-=======
     RoutingModule,
     MatToolbarModule ,
     MatBottomSheetModule,
@@ -54,7 +48,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatGridListModule,
     
 
->>>>>>> Stashed changes
   ],
   providers: [],
   bootstrap: [AppComponent]
