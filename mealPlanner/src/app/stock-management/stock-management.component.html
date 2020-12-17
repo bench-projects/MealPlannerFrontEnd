@@ -52,7 +52,7 @@
             <div id="newingredient">
                 <h1>add ingredient</h1>
 
-                <form #newIngredientPost="ngForm" (ngSubmit)="onSubmit(newIngredientPost.value)">
+                <form #newIngredientPost="ngForm" (ngSubmit)="onSubmitIngredient(newIngredientPost.value)">
                     <div class="form-group">
                         <label for="ingredient_name">Ingredient name</label>
                         <input required minlength="3" ngModel name="ingredient_name" #ingredient_name="ngModel"
@@ -82,17 +82,17 @@
             </div>
             <div id="newrecipe">
                 <h1>add recipe</h1>
-                <form>
+                <form #newRecipePost="ngForm" (ngSubmit)="onSubmitRecipe(newRecipePost.value)">
                     <div class="form-group">
                         <div>
                             <mat-label>Favorite food</mat-label>
-                            <input matInput placeholder="Ex. Pizza" value="Sushi">
+                            <input ngModel name="recipe_name" #recipe_name="ngModel" matInput placeholder="Ex. Pizza" value="Sushi">
                         </div>
                         <div>
                             <mat-form-field appearance="fill">
                                 <mat-label>Toppings</mat-label>
-                                <mat-select multiple>
-                                    <mat-option *ngFor="let dat of ingredientList" [value]="">{{dat.ingredient_name}}
+                                <mat-select ngModel name="ingredients" #ingredients="ngModel" multiple >
+                                    <mat-option *ngFor="let dat of ingredientList" [value]="dat.id">{{dat.ingredient_name}}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>

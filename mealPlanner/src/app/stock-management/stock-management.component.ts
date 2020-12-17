@@ -18,8 +18,8 @@ export class StockManagementComponent implements OnInit {
   ingredientList = [];
   pData = {
         
-    "ingredient_name": "Grapes",
-    "quantity_count": 8
+    "recipe_name": "Lmao",
+    "ingredients": "22,6"
 };
 
   log(x) { console.log(x) };
@@ -38,9 +38,15 @@ export class StockManagementComponent implements OnInit {
     this.ingredientList = this.inventoryService.getIngredientList();
 
   }
-  onSubmit(data){
+  onSubmitIngredient(data){
     console.warn(data);
     this.inventoryService.postIngredient(data);
+  }
+  onSubmitRecipe(data){
+    this.pData.recipe_name = data.recipe_name;
+    this.pData.ingredients = data.ingredients.toString();;
+    console.warn(this.pData);
+    this.inventoryService.postRecipe(this.pData);
   }
 
 

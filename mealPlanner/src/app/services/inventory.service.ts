@@ -62,9 +62,21 @@ export class InventoryService {
     })
 
   }
-  postRecipe(data){
-    this.http.post(this.url+"",data).subscribe((result)=>{
-      console.log("result",result)
+  postRecipe2(recipeList){
+    
+    console.log(recipeList.recipe_name+" "+recipeList.ingredients)
+
+  }
+  postRecipe(recipeList){
+    
+    
+    
+    this.http.post(this.url+"recipe/add",{
+      recipe_name: recipeList.recipe_name,
+      ingredients: recipeList.ingredients
+    }).toPromise().then((data: any)=>{
+      console.log(data)
+      console.log(JSON.stringify(data.json))
     })
 
   }
