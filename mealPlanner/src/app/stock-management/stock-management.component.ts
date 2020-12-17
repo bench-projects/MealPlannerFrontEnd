@@ -16,6 +16,11 @@ export class StockManagementComponent implements OnInit {
 
 
   ingredientList = [];
+  pData = {
+        
+    "ingredient_name": "Grapes",
+    "quantity_count": 8
+};
 
   log(x) { console.log(x) };
 
@@ -32,6 +37,10 @@ export class StockManagementComponent implements OnInit {
 
     this.ingredientList = this.inventoryService.getIngredientList();
 
+  }
+  onSubmit(data){
+    console.warn(data);
+    this.inventoryService.postIngredient(data);
   }
 
 

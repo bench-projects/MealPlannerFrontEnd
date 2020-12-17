@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +37,35 @@ export class InventoryService {
 
     });
     return this.recipeList;
+
+  }
+  postIngredient(ing){
+
+    
+    
+
+    this.http.post(this.url+"ingredients/add",{
+      ingredient_name: ing.ingredient_name,
+      quantity_count: ing.quantity_count
+    }).toPromise().then((data: any)=>{
+      console.log(data)
+      console.log(JSON.stringify(data.json))
+    })
+
+  }
+  postIngredient2(data){
+
+    const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
+    const body = {data};
+    this.http.post(this.url+"ingredients/add",body,config).subscribe((result)=>{
+      console.log("result",result)
+    })
+
+  }
+  postRecipe(data){
+    this.http.post(this.url+"",data).subscribe((result)=>{
+      console.log("result",result)
+    })
 
   }
 }
