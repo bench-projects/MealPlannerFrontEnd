@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RoutingModule } from './routing/routing.module';
+import {InventoryService} from './services/inventory.service'
 
 
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import{MatPaginatorModule} from '@angular/material/paginator'
 import{MatTableModule} from'@angular/material/table'
 
 import{ScrollingModule} from '@angular/cdk/scrolling'
+import{HttpClientModule} from '@angular/common/http'
 
 
 
@@ -58,11 +60,12 @@ import{ScrollingModule} from '@angular/cdk/scrolling'
     MatButtonModule,
     MatPaginatorModule,
     MatTableModule,
-    ScrollingModule
+    ScrollingModule,
+    HttpClientModule
     
 
   ],
-  providers: [],
+  providers: [InventoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -24,48 +24,33 @@
     <div class="stockpage">
         <div id="stockpagetop">
             <div id="stockview">
-                <p>stock</p>
-
-
-
-
+                <h1>stock</h1>
                 <cdk-virtual-scroll-viewport itemSize="10" class="example-viewport">
                     <table>
                         <tr>
                             <th>Ingredient ID</th>
                             <th>Ingredient name</th>
                             <th>Ingredient quantity</th>
-                            
-                            
-                        </tr>
-                        <tr *cdkVirtualFor="let data of dummyData" class="dummydata">
 
-                            <td>??</td> 
-                            <td>{{data.name}}</td>
-                            <td>{{data.quantity}}</td>
+
+                        </tr>
+                        <tr *ngFor="let dat of ingredientList" class="dummydata">
+
+                            <td>{{dat.id}}</td>
+                            <td>{{dat.ingredient_name}}</td>
+                            <td>{{dat.quantity_count}}</td>
+
                         </tr>
                     </table>
 
                 </cdk-virtual-scroll-viewport>
-
-
-
-
-
-
-
-
-
-
-
-
 
             </div>
 
         </div>
         <div id="stockpagebottom">
             <div id="newingredient">
-                <p>add ingredient</p>
+                <h1>add ingredient</h1>
 
                 <form>
                     <div class="form-group">
@@ -96,19 +81,29 @@
 
             </div>
             <div id="newrecipe">
-                <p>add recipe</p>
+                <h1>add recipe</h1>
                 <form>
                     <div class="form-group">
-                        <label for="Recipe name">Recipe name</label>
-                        <input id="recipeName" type="text" class="form-control">
+                        <div>
+                            <mat-label>Favorite food</mat-label>
+                            <input matInput placeholder="Ex. Pizza" value="Sushi">
+                        </div>
+                        <div>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Toppings</mat-label>
+                                <mat-select multiple>
+                                    <mat-option *ngFor="let dat of ingredientList" [value]="">{{dat.ingredient_name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
 
-                        <label for="Ingredient List">Ingredient List</label>
-                        <input id="IngredientList" type="text" class="form-control">
+
+
 
                         <input type="submit" value="Submit">
                     </div>
                 </form>
-
 
             </div>
         </div>
