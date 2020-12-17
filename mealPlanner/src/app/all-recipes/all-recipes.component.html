@@ -1,0 +1,52 @@
+<div>
+    <mat-toolbar class="toolbar" color="black">
+        <span class="identity"></span>
+        <span class="title">Meal Planner</span>
+
+        <span class="links">
+
+            <mat-button-toggle-group class="buttonlink" name="legacy" aria-label="Font Style">
+                <mat-button-toggle value="My Account" onclick="location.href='http://localhost:4200/'">My Account
+                </mat-button-toggle>
+                <mat-button-toggle value="My Plan" onclick="location.href='http://localhost:4200/plan'">My Plan
+                </mat-button-toggle>
+                <mat-button-toggle value="Recipes" onclick="location.href='http://localhost:4200/recipes'">Recipes
+                </mat-button-toggle>
+                <mat-button-toggle value="Stock" onclick="location.href='http://localhost:4200/stock'">Stock
+                </mat-button-toggle>
+
+            </mat-button-toggle-group>
+        </span>
+
+    </mat-toolbar>
+</div>
+<div class="pageContents">
+
+    <cdk-virtual-scroll-viewport itemSize="10" class="example-viewport">
+
+        <div *ngFor="let dat of recipeList" class="dummydata">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                         {{dat.recipe_name}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Click to view recipe
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p *ngFor="let d of dat.ingredientList">
+                    {{d.ingredient_name}}</p>
+            </mat-expansion-panel>
+
+        </div>
+            
+        
+
+
+    </cdk-virtual-scroll-viewport>
+
+
+    
+
+
+</div>

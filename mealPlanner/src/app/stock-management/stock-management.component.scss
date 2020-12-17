@@ -1,0 +1,55 @@
+.example-viewport{
+    height: 60vh;
+    width: 100%;
+    
+    
+}
+#stockpagetop{
+    height: 60vh;
+    
+}
+#stockpagebottom{
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .form-group{
+        display: flex;
+    flex-direction: row;
+    }
+    
+}
+
+#stockbox{
+    height: 30%;
+}
+#newrecipe{
+    width: 50%;
+    
+}
+#newingredient{
+    
+    width: 50%;
+    
+}
+.mat-elevation-z8{
+    overflow-y:auto;
+    height: 10px;
+    background-color: aqua;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

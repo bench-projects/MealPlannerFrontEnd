@@ -1,0 +1,114 @@
+<div>
+    <mat-toolbar class="toolbar" color="black">
+        <span class="identity"></span>
+        <span class="title">Meal Planner</span>
+
+        <span class="links">
+
+            <mat-button-toggle-group class="buttonlink" name="legacy" aria-label="Font Style">
+                <mat-button-toggle value="My Account" onclick="location.href='http://localhost:4200/'">My Account
+                </mat-button-toggle>
+                <mat-button-toggle value="My Plan" onclick="location.href='http://localhost:4200/plan'">My Plan
+                </mat-button-toggle>
+                <mat-button-toggle value="Recipes" onclick="location.href='http://localhost:4200/recipes'">Recipes
+                </mat-button-toggle>
+                <mat-button-toggle value="Stock" onclick="location.href='http://localhost:4200/stock'">Stock
+                </mat-button-toggle>
+
+            </mat-button-toggle-group>
+        </span>
+
+    </mat-toolbar>
+</div>
+<div class="pageContents">
+    <div class="stockpage">
+        <div id="stockpagetop">
+            <div id="stockview">
+                <h1>stock</h1>
+                <cdk-virtual-scroll-viewport itemSize="10" class="example-viewport">
+                    <table>
+                        <tr>
+                            <th>Ingredient ID</th>
+                            <th>Ingredient name</th>
+                            <th>Ingredient quantity</th>
+
+
+                        </tr>
+                        <tr *ngFor="let dat of ingredientList" class="dummydata">
+
+                            <td>{{dat.id}}</td>
+                            <td>{{dat.ingredient_name}}</td>
+                            <td>{{dat.quantity_count}}</td>
+
+                        </tr>
+                    </table>
+
+                </cdk-virtual-scroll-viewport>
+
+            </div>
+
+        </div>
+        <div id="stockpagebottom">
+            <div id="newingredient">
+                <h1>add ingredient</h1>
+
+                <form>
+                    <div class="form-group">
+                        <label for="ingredient name">Ingredient name</label>
+                        <input required minlength="3" ngModel name="ingredientName" #ingredientName="ngModel"
+                            (change)="log(ingredientName)" id="ingredientName" type="text" class="form-control">
+
+
+                        <label for="Ingredient Quantity">Ingredient Quantity</label>
+                        <input required min="1" ngModel name="ingredientQuantity" #ingredientQuantity="ngModel"
+                            (change)="log(ingredientQuantity)" id="ingredientQuantity" type="number"
+                            class="form-control">
+
+                        <input type="submit" value="Submit">
+                    </div>
+                    <div>
+                        <div class="alert" *ngIf="!ingredientName.valid && ingredientName.touched">
+                            <div *ngIf="ingredientName.errors.required">Must enter an ingredient name</div>
+                            <div *ngIf="ingredientName.errors.minlength">Ingredient name must be at least 3 characters
+                                long</div>
+                            <div *ngIf="ingredientQuantity.errors.required">Must enter quantity</div>
+                            <div *ngIf="ingredientQuantity.errors.min">Quantity should be 1 or more</div>
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+            <div id="newrecipe">
+                <h1>add recipe</h1>
+                <form>
+                    <div class="form-group">
+                        <div>
+                            <mat-label>Favorite food</mat-label>
+                            <input matInput placeholder="Ex. Pizza" value="Sushi">
+                        </div>
+                        <div>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Toppings</mat-label>
+                                <mat-select multiple>
+                                    <mat-option *ngFor="let dat of ingredientList" [value]="">{{dat.ingredient_name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+
+
+
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

@@ -1,0 +1,104 @@
+<div >
+    <mat-toolbar class="toolbar" color="black">
+        <span class="identity"></span>
+            <span class="title">Meal Planner</span>
+        
+        <span class="links">
+
+            <mat-button-toggle-group class="buttonlink" name="legacy" aria-label="Font Style">
+                <mat-button-toggle value="My Account" onclick="location.href='http://localhost:4200/'">My Account
+                </mat-button-toggle>
+                <mat-button-toggle value="My Plan" onclick="location.href='http://localhost:4200/plan'">My Plan
+                </mat-button-toggle>
+                <mat-button-toggle value="Recipes" onclick="location.href='http://localhost:4200/recipes'">Recipes
+                </mat-button-toggle>
+                <mat-button-toggle value="Stock" onclick="location.href='http://localhost:4200/stock'">Stock
+                </mat-button-toggle>
+
+            </mat-button-toggle-group>
+        </span>
+
+    </mat-toolbar>
+</div>
+<div class="pageContents">
+
+    <mat-grid-list cols="7" rowHeight="5vh" class="days">
+        <mat-grid-tile>Mon</mat-grid-tile>
+        <mat-grid-tile>Tue</mat-grid-tile>
+        <mat-grid-tile>Wed</mat-grid-tile>
+        <mat-grid-tile>Thur</mat-grid-tile>
+        <mat-grid-tile>Fri</mat-grid-tile>
+        <mat-grid-tile>Sat</mat-grid-tile>
+        <mat-grid-tile>Sun</mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="7" rowHeight="10%" class="meals">
+        <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+            <select matNativeControl>
+                <option value="" selected></option>
+                <option value="Meal1">Meal1</option>
+                <option value="Meal2" disabled>Meal2</option>
+                <option value="Meal3">Meal3</option>
+                <option value="Meal4">Meal4</option>
+            </select>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+            <select matNativeControl>
+                <option value="" selected></option>
+                <option value="Meal1">Meal1</option>
+                <option value="Meal2" disabled>Meal2</option>
+                <option value="Meal3">Meal3</option>
+                <option value="Meal4">Meal4</option>
+            </select>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+            <select matNativeControl>
+                <option value="" selected></option>
+                <option value="Meal1">Meal1</option>
+                <option value="Meal2" disabled>Meal2</option>
+                <option value="Meal3">Meal3</option>
+                <option value="Meal4">Meal4</option>
+            </select>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+            <select matNativeControl>
+                <option value="" selected></option>
+                <option value="Meal1">Meal1</option>
+                <option value="Meal2" disabled>Meal2</option>
+                <option value="Meal3">Meal3</option>
+                <option value="Meal4">Meal4</option>
+            </select>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+            <select matNativeControl>
+                <option value="" selected></option>
+                <option value="Meal1">Meal1</option>
+                <option value="Meal2" disabled>Meal2</option>
+                <option value="Meal3">Meal3</option>
+                <option value="Meal4">Meal4</option>
+            </select>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+            <select matNativeControl>
+                <option value="" selected></option>
+                <option value="Meal1">Meal1</option>
+                <option value="Meal2" disabled>Meal2</option>
+                <option value="Meal3">Meal3</option>
+                <option value="Meal4">Meal4</option>
+            </select>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+            <select matNativeControl>
+                <option value="" selected></option>
+                <option value="Meal1">Meal1</option>
+                <option value="Meal2" disabled>Meal2</option>
+                <option value="Meal3">Meal3</option>
+                <option value="Meal4">Meal4</option>
+            </select>
+        </mat-grid-tile>
+    </mat-grid-list>
+    
+    
+
+</div>
