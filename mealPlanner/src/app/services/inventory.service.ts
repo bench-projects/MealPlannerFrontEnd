@@ -9,6 +9,7 @@ export class InventoryService {
   url = 'http://localhost:8080/';
   ingredientList = [];
   recipeList=[];
+  mealPlan=[];
 
   constructor(private http: HttpClient) { }
 
@@ -39,6 +40,20 @@ export class InventoryService {
     return this.recipeList;
 
   }
+  getMealPlan(){
+    this.http.get(this.url+"mealplan/get/All").toPromise().then(data => {
+      for (let key in data)
+        if (data.hasOwnProperty(key))
+          this.mealPlan.push(data[key])
+
+
+
+    });
+    return this.mealPlan;
+
+  }
+
+
   postIngredient(ing){
 
     
