@@ -1,8 +1,8 @@
-<div >
+<div>
     <mat-toolbar class="toolbar" color="black">
         <span class="identity"></span>
-            <span class="title">Meal Planner</span>
-        
+        <span class="title">Meal Planner</span>
+
         <span class="links">
 
             <mat-button-toggle-group class="buttonlink" name="legacy" aria-label="Font Style">
@@ -20,85 +20,182 @@
 
     </mat-toolbar>
 </div>
+
 <div class="pageContents">
 
-    <mat-grid-list cols="7" rowHeight="5vh" class="days">
-        <mat-grid-tile>Mon</mat-grid-tile>
-        <mat-grid-tile>Tue</mat-grid-tile>
-        <mat-grid-tile>Wed</mat-grid-tile>
-        <mat-grid-tile>Thur</mat-grid-tile>
-        <mat-grid-tile>Fri</mat-grid-tile>
-        <mat-grid-tile>Sat</mat-grid-tile>
-        <mat-grid-tile>Sun</mat-grid-tile>
-    </mat-grid-list>
-
-    <mat-grid-list cols="7" rowHeight="10%" class="meals">
-        <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
-            <select matNativeControl>
-                <option value="" selected></option>
-                <option value="Meal1">Meal1</option>
-                <option value="Meal2" disabled>Meal2</option>
-                <option value="Meal3">Meal3</option>
-                <option value="Meal4">Meal4</option>
-            </select>
-        </mat-grid-tile>
-
-        <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
-            <select matNativeControl>
-                <option value="" selected></option>
-                <option value="Meal1">Meal1</option>
-                <option value="Meal2" disabled>Meal2</option>
-                <option value="Meal3">Meal3</option>
-                <option value="Meal4">Meal4</option>
-            </select>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
-            <select matNativeControl>
-                <option value="" selected></option>
-                <option value="Meal1">Meal1</option>
-                <option value="Meal2" disabled>Meal2</option>
-                <option value="Meal3">Meal3</option>
-                <option value="Meal4">Meal4</option>
-            </select>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
-            <select matNativeControl>
-                <option value="" selected></option>
-                <option value="Meal1">Meal1</option>
-                <option value="Meal2" disabled>Meal2</option>
-                <option value="Meal3">Meal3</option>
-                <option value="Meal4">Meal4</option>
-            </select>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
-            <select matNativeControl>
-                <option value="" selected></option>
-                <option value="Meal1">Meal1</option>
-                <option value="Meal2" disabled>Meal2</option>
-                <option value="Meal3">Meal3</option>
-                <option value="Meal4">Meal4</option>
-            </select>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
-            <select matNativeControl>
-                <option value="" selected></option>
-                <option value="Meal1">Meal1</option>
-                <option value="Meal2" disabled>Meal2</option>
-                <option value="Meal3">Meal3</option>
-                <option value="Meal4">Meal4</option>
-            </select>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
-            <select matNativeControl>
-                <option value="" selected></option>
-                <option value="Meal1">Meal1</option>
-                <option value="Meal2" disabled>Meal2</option>
-                <option value="Meal3">Meal3</option>
-                <option value="Meal4">Meal4</option>
-            </select>
-        </mat-grid-tile>
-    </mat-grid-list>
+   
     
     
+    <form class="plan" >
+
+        <mat-grid-list cols="7" rowHeight="5vh" class="days">
+            <mat-grid-tile>Mon</mat-grid-tile>
+            <mat-grid-tile>Tue</mat-grid-tile>
+            <mat-grid-tile>Wed</mat-grid-tile>
+            <mat-grid-tile>Thur</mat-grid-tile>
+            <mat-grid-tile>Fri</mat-grid-tile>
+            <mat-grid-tile>Sat</mat-grid-tile>
+            <mat-grid-tile>Sun</mat-grid-tile>
+        </mat-grid-list>
+
+        <mat-grid-list cols="7" rowHeight="10%" class="meals">
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="mon1" #mon1="ngModel" matNativeControl>
+                    <option  value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.recipe_name">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="tue1" #tue1="ngModel" matNativeControl>
+                    <option value="" selected="selected"></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="wed1" #wed1="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="thur1" #thur1="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="fri1" #fri1="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="sat1" #sat1="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="sun1" #sun1="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="mon2" #mon2="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="tue2" #tue2="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="wed2" #wed2="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="thur2" #thur2="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="fri2" #fri2="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="sat2" #sat2="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="sun2" #sun2="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="mon3" #mon3="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="tue3" #tue3="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="wed3" #wed3="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="thur3" #thur3="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="fri3" #fri3="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="sat3" #sat3="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="3" class="mealSelection">
+                <select ngModel name="sun3" #sun3="ngModel" matNativeControl>
+                    <option value="" selected></option>
+                    <option *ngFor="let dat of recipeList" [value]="dat.id">{{dat.recipe_name}}</option>
+
+                </select>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+
+
+        <input type="submit" value="Submit">
+    </form>
+
+
+
+
+
 
 </div>

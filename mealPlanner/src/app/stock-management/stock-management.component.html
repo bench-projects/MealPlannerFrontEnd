@@ -28,7 +28,7 @@
                 <cdk-virtual-scroll-viewport itemSize="10" class="example-viewport">
                     <table>
                         <tr>
-                            <th>Ingredient ID</th>
+                            <th>ID</th>
                             <th>Ingredient name</th>
                             <th>Ingredient quantity</th>
 
@@ -52,27 +52,27 @@
             <div id="newingredient">
                 <h1>add ingredient</h1>
 
-                <form>
+                <form #newIngredientPost="ngForm" (ngSubmit)="onSubmitIngredient(newIngredientPost.value)">
                     <div class="form-group">
-                        <label for="ingredient name">Ingredient name</label>
-                        <input required minlength="3" ngModel name="ingredientName" #ingredientName="ngModel"
-                            (change)="log(ingredientName)" id="ingredientName" type="text" class="form-control">
+                        <label for="ingredient_name">Ingredient name</label>
+                        <input required minlength="3" ngModel name="ingredient_name" #ingredient_name="ngModel"
+                            (change)="log(ingredient_name)" id="ingredient_name" type="text" class="form-control">
 
 
                         <label for="Ingredient Quantity">Ingredient Quantity</label>
-                        <input required min="1" ngModel name="ingredientQuantity" #ingredientQuantity="ngModel"
-                            (change)="log(ingredientQuantity)" id="ingredientQuantity" type="number"
+                        <input required min="1" ngModel name="quantity_count" #quantity_count="ngModel"
+                            (change)="log(quantity_count)" id="quantity_count" type="number"
                             class="form-control">
 
                         <input type="submit" value="Submit">
                     </div>
                     <div>
-                        <div class="alert" *ngIf="!ingredientName.valid && ingredientName.touched">
-                            <div *ngIf="ingredientName.errors.required">Must enter an ingredient name</div>
-                            <div *ngIf="ingredientName.errors.minlength">Ingredient name must be at least 3 characters
+                        <div class="alert" *ngIf="!ingredient_name.valid && ingredient_name.touched">
+                            <div *ngIf="ingredient_name.errors.required">Must enter an ingredient name</div>
+                            <div *ngIf="ingredient_name.errors.minlength">Ingredient name must be at least 3 characters
                                 long</div>
-                            <div *ngIf="ingredientQuantity.errors.required">Must enter quantity</div>
-                            <div *ngIf="ingredientQuantity.errors.min">Quantity should be 1 or more</div>
+                            <div *ngIf="quantity_count.errors.required">Must enter quantity</div>
+                            <div *ngIf="quantity_count.errors.min">Quantity should be 1 or more</div>
                         </div>
 
                     </div>
@@ -82,17 +82,17 @@
             </div>
             <div id="newrecipe">
                 <h1>add recipe</h1>
-                <form>
+                <form #newRecipePost="ngForm" (ngSubmit)="onSubmitRecipe(newRecipePost.value)">
                     <div class="form-group">
                         <div>
                             <mat-label>Favorite food</mat-label>
-                            <input matInput placeholder="Ex. Pizza" value="Sushi">
+                            <input ngModel name="recipe_name" #recipe_name="ngModel" matInput placeholder="Ex. Pizza" value="Sushi">
                         </div>
                         <div>
                             <mat-form-field appearance="fill">
                                 <mat-label>Toppings</mat-label>
-                                <mat-select multiple>
-                                    <mat-option *ngFor="let dat of ingredientList" [value]="">{{dat.ingredient_name}}
+                                <mat-select ngModel name="ingredients" #ingredients="ngModel" multiple >
+                                    <mat-option *ngFor="let dat of ingredientList" [value]="dat.id">{{dat.ingredient_name}}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
