@@ -5,7 +5,7 @@
 
         <span class="links">
 
-            <mat-button-toggle-group class="buttonlink" name="legacy" aria-label="Font Style">
+            <mat-button-toggle-group class="buttonlink" name="legacy" aria-label="Font Style" value="Stock"> 
                 <mat-button-toggle value="My Account" onclick="location.href='http://localhost:4200/'">My Account
                 </mat-button-toggle>
                 <mat-button-toggle value="My Plan" onclick="location.href='http://localhost:4200/plan'">My Plan
@@ -24,7 +24,7 @@
     <div class="stockpage">
         <div id="stockpagetop">
             <div id="stockview">
-                <h1>stock</h1>
+                <h1 class="mtitle">Stock</h1>
                 <cdk-virtual-scroll-viewport itemSize="10" class="example-viewport">
                     <table>
                         <tr>
@@ -50,7 +50,7 @@
         </div>
         <div id="stockpagebottom">
             <div id="newingredient">
-                <h1>add ingredient</h1>
+                <h1 class="mtitle">Add ingredient</h1>
 
                 <form #newIngredientPost="ngForm" (ngSubmit)="onSubmitIngredient(newIngredientPost.value)">
                     <div class="form-group">
@@ -81,7 +81,7 @@
 
             </div>
             <div id="newrecipe">
-                <h1>add recipe</h1>
+                <h1 class="mtitle">Add recipe</h1>
                 <form #newRecipePost="ngForm" (ngSubmit)="onSubmitRecipe(newRecipePost.value)">
                     <div class="form-group">
                         <div>
